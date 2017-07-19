@@ -20,28 +20,27 @@ opctl run github.com/opspec-pkgs/azure.activedirectory.app.create#VERSION
 ## compose
 
 ```yaml
-run:
-  op:
-    pkg: { ref: github.com/opspec-pkgs/azure.activedirectory.app.create#VERSION }
-    inputs:
-      subscriptionId:
-      loginId:
-      loginSecret:
-      displayName:
-      homepage:
-      identifierUris:
-      # begin optional args
-      endDate:
-      isAvailableToOtherTenants:
-      keyUsage:
-      keyType:
-      key:
-      loginTenantId:
-      loginType:
-      password:
-      replyUrls:
-      startDate:
-      # end optional args
+op:
+  pkg: { ref: github.com/opspec-pkgs/azure.activedirectory.app.create#VERSION }
+  inputs:
+    subscriptionId:
+    loginId:
+    loginSecret:
+    displayName:
+    homepage:
+    identifierUris:
+    # begin optional args
+    endDate:
+    isAvailableToOtherTenants:
+    keyUsage:
+    keyType:
+    key:
+    loginTenantId:
+    loginType:
+    password:
+    replyUrls:
+    startDate:
+    # end optional args
 ```
 
 # Support
