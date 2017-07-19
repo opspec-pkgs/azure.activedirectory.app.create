@@ -23,19 +23,24 @@ opctl run github.com/opspec-pkgs/azure.activedirectory.app.create#VERSION
 run:
   op:
     pkg: { ref: github.com/opspec-pkgs/azure.activedirectory.app.create#VERSION }
-    inputs: 
+    inputs:
       subscriptionId:
       loginId:
       loginSecret:
-      name:
-      resourceGroup:
+      displayName:
+      homepage:
+      identifierUris:
       # begin optional args
-      isLinux:
-      location:
+      endDate:
+      isAvailableToOtherTenants:
+      keyUsage:
+      keyType:
+      key:
       loginTenantId:
       loginType:
-      numberOfWorkers:
-      sku:
+      password:
+      replyUrls:
+      startDate:
       # end optional args
 ```
 

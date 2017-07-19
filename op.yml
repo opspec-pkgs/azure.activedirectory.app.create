@@ -1,5 +1,5 @@
 name: github.com/opspec-pkgs/azure.activedirectory.app.create
-description: creates an azure app service plan (if it doesn't already exist)
+description: creates an azure active directory app (if it doesn't already exist)
 inputs:
   subscriptionId:
     string:
@@ -25,7 +25,7 @@ inputs:
   identifierUris:
     string:
       constraints: { minLength: 1 }
-      description: space separated unique URIs that Azure AD will use for this app
+      description: space separated unique URIs that Azure AD will use to identify this app
   endDate:
     string:
       constraints: { minLength: 1 }
