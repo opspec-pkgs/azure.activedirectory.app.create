@@ -1,0 +1,101 @@
+name: github.com/opspec-pkgs/azure.activedirectory.app.create
+description: creates an azure app service plan (if it doesn't already exist)
+inputs:
+  subscriptionId:
+    string:
+      constraints: { minLength: 1 }
+      description: id of azure subscription
+  loginId:
+    string:
+      constraints: { minLength: 1 }
+      description: id of user, service principal, or app to login with
+  loginSecret:
+    string:
+      constraints: { minLength: 1 }
+      description: secret of user, service principal, or app to login with
+      isSecret: true
+  displayName:
+    string:
+      constraints: { minLength: 1 }
+      description: display name of the app
+  homepage:
+    string:
+      constraints: { minLength: 1, format: uri }
+      description: url where users can sign in to the app
+  identifierUris:
+    string:
+      constraints: { minLength: 1 }
+      description: space separated unique URIs that Azure AD will use for this app
+  endDate:
+    string:
+      constraints: { minLength: 1 }
+      description: date or datetime at which credentials expire(e.g. '2017-01-01T01:00:00+00:00' or '2017-01-01'); defaults to on year from current time
+      default: " "
+  isAvailableToOtherTenants:
+    string:
+      constraints: { enum: ['true','false']}
+      description: if the app is available to other azure tenants
+      default: 'false'
+  keyUsage:
+    string:
+      constraints: { enum: [Sign, Verify] }
+      description: usage of the key credentials associated with the application
+      default: Verify
+  keyType:
+    string:
+      constraints: { enum: [AsymmetricX509Cert, Password, Symmetric] }
+      description: key type of the app
+      default: AsymmetricX509Cert
+  key:
+    string:
+      constraints: { minLength: 1 }
+      secret: true
+      description: key credential for the application
+  loginTenantId:
+    string:
+      constraints: { minLength: 1 }
+      description: tenant id of user, service principal, or app to login with
+      default: " "
+  loginType:
+    string:
+      constraints: { enum: [user, sp]}
+      description: type of login; 'user' (default) or 'sp' for service principal
+      default: user
+  password:
+    string:
+      constraints: { minLength: 1 }
+      secret: true
+      description: password credential for the application
+      default: " "
+  replyUrls:
+    string:
+      constraints: { minLength: 1 }
+      description: space separated URIs to which Azure AD will redirect in response to an OAuth 2.0 request. The value does not need to be a physical endpoint, but must be a valid URI
+      default: " "
+  startDate:
+    string:
+      constraints: { minLength: 1 }
+      description: date or datetime at which credentials become valid(e.g. '2017-01-01T01:00:00+00:00' or '2017-01-01'); defaults to current time
+      default: " "
+run:
+  container:
+    image: { ref: 'azuresdk/azure-cli-python:0.2.10' }
+    cmd: [ /cmd.sh ]
+    files: { /cmd.sh }
+    envVars:
+      subscriptionId:
+      loginId:
+      loginSecret:
+      displayName:
+      homepage:
+      identifierUris:
+      endDate:
+      isAvailableToOtherTenants:
+      keyUsage:
+      keyType:
+      key:
+      loginTenantId:
+      loginType:
+      password:
+      replyUrls:
+      startDate:
