@@ -49,8 +49,8 @@ inputs:
   key:
     string:
       constraints: { minLength: 1 }
-      secret: true
       description: key credential for the application
+      isSecret: true
   loginTenantId:
     string:
       constraints: { minLength: 1 }
@@ -64,9 +64,9 @@ inputs:
   password:
     string:
       constraints: { minLength: 1 }
-      secret: true
       description: password credential for the application
       default: " "
+      isSecret: true
   replyUrls:
     string:
       constraints: { minLength: 1 }
