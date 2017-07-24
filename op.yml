@@ -50,6 +50,7 @@ inputs:
     string:
       constraints: { minLength: 1 }
       description: key credential for the application
+      default: " "
       isSecret: true
   loginTenantId:
     string:
