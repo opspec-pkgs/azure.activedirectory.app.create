@@ -1,31 +1,34 @@
 [![Build Status](https://travis-ci.org/opspec-pkgs/azure.activedirectory.app.create.svg?branch=master)](https://travis-ci.org/opspec-pkgs/azure.activedirectory.app.create)
 
+<img src="icon.svg" alt="icon" height="100px">
+
 # Problem statement
 
 creates an azure active directory app (if it doesn't already exist)
 
+# Format
+
+this version of the pkg is in [![opspec 0.1.5](https://img.shields.io/badge/opspec-0.1.5-brightgreen.svg?colorA=6b6b6b&colorB=fc16be)](https://opspec.io/0.1.5/packages.html) format
+
 # Example usage
 
-> note: in examples, VERSION represents a version of the
-> azure.activedirectory.app.create pkg
-
-## install
+## Install
 
 ```shell
-opctl pkg install github.com/opspec-pkgs/azure.activedirectory.app.create#VERSION
+opctl pkg install github.com/opspec-pkgs/azure.activedirectory.app.create#1.0.0
 ```
 
-## run
+## Run
 
 ```
-opctl run github.com/opspec-pkgs/azure.activedirectory.app.create#VERSION
+opctl run github.com/opspec-pkgs/azure.activedirectory.app.create#1.0.0
 ```
 
-## compose
+## Compose
 
 ```yaml
 op:
-  pkg: { ref: github.com/opspec-pkgs/azure.activedirectory.app.create#VERSION }
+  pkg: { ref: github.com/opspec-pkgs/azure.activedirectory.app.create#1.0.0 }
   inputs:
     subscriptionId:
     loginId:
@@ -33,7 +36,7 @@ op:
     displayName:
     homepage:
     identifierUris:
-    # begin optional args
+    # params w/ default
     endDate:
     isAvailableToOtherTenants:
     keyUsage:
@@ -44,7 +47,6 @@ op:
     password:
     replyUrls:
     startDate:
-    # end optional args
 ```
 
 # Support
